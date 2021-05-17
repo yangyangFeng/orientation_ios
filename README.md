@@ -2,6 +2,7 @@
 
 Plug in supporting modifying IOS device orientation
 
-# 0.0.2
-update
+# 1.0.2
+
+update example code
 
