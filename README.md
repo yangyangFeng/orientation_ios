@@ -6,4 +6,4 @@ Plug in supporting modifying IOS device orientation
 
 update example code
 
-example.gif![image](https://user-images.githubusercontent.com/12904185/118470202-0df34e00-b739-11eb-80d8-f758687efdae.png)
+example.gif![image](https://github.com/yangyangFeng/imageResource/blob/master/orientation_ios.gif)
