@@ -19,38 +19,39 @@ static NSString *const METHOD_APP_SUPPORT_ORIENTATION = @"app_support_orientatio
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([METHOD_CHANGE_ORIENTATION isEqualToString:call.method]) {
-      NSNumber *index = [NSNumber numberWithInt: [call.arguments[0] intValue]];
-      UIDeviceOrientation iOSOrientation;
-      UIInterfaceOrientationMask appSupportOrientation;
+    NSNumber *index = [NSNumber numberWithInt: [call.arguments[0] intValue]];
+    UIDeviceOrientation iOSOrientation;
+     UIInterfaceOrientation iOSOrientation;
+    UIInterfaceOrientationMask appSupportOrientation;
     switch ([index intValue]) {
       case 0:
       {
         appSupportOrientation = UIInterfaceOrientationMaskAll;
-        iOSOrientation = UIDeviceOrientationUnknown;
+        iOSOrientation = UIInterfaceOrientationUnknown;
       }
         break;
       case 1:
       {
         appSupportOrientation = UIInterfaceOrientationMaskPortrait;
-        iOSOrientation = UIDeviceOrientationPortrait;
+        iOSOrientation = UIInterfaceOrientationPortrait;
       }
         break;
       case 2:
       {
         appSupportOrientation = UIInterfaceOrientationMaskPortraitUpsideDown;
-        iOSOrientation = UIDeviceOrientationPortraitUpsideDown;
+        iOSOrientation = UIInterfaceOrientationPortraitUpsideDown;
       }
         break;
       case 3:
       {
-        appSupportOrientation = UIInterfaceOrientationMaskLandscapeLeft;
-        iOSOrientation = UIDeviceOrientationLandscapeLeft;
+        appSupportOrientation = UIInterfaceOrientationMaskLandscape;
+        iOSOrientation = UIInterfaceOrientationLandscapeLeft;
       }
         break;
       case 4:
       {
-        appSupportOrientation = UIInterfaceOrientationMaskLandscapeRight;
-        iOSOrientation = UIDeviceOrientationLandscapeRight;
+        appSupportOrientation = UIInterfaceOrientationMaskLandscape;
+        iOSOrientation = UIInterfaceOrientationLandscapeRight;
       }
         break;
       default:
