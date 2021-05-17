@@ -20,8 +20,7 @@ static NSString *const METHOD_APP_SUPPORT_ORIENTATION = @"app_support_orientatio
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([METHOD_CHANGE_ORIENTATION isEqualToString:call.method]) {
     NSNumber *index = [NSNumber numberWithInt: [call.arguments[0] intValue]];
-    UIDeviceOrientation iOSOrientation;
-     UIInterfaceOrientation iOSOrientation;
+    UIInterfaceOrientation iOSOrientation;
     UIInterfaceOrientationMask appSupportOrientation;
     switch ([index intValue]) {
       case 0:
