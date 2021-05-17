@@ -14,7 +14,9 @@ dependencies:
     sdk: flutter
 
   orientation_ios:
-    git: https://github.com/yangyangFeng/orientation_ios.git
+    git:
+      url: https://github.com/yangyangFeng/orientation_ios.git
+      tag: 1.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

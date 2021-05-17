@@ -1,6 +1,6 @@
 name: orientation_ios
 description: Plug in supporting modifying IOS device orientation.
-version: 0.0.2
+version: 1.0.2
 homepage: https://ttpatch.cn/
 
 environment:
