@@ -45,16 +45,20 @@ class _MyAppState extends State<MyApp> {
       child: ListView(children: [
         GestureDetector(onTap: (){
           OrientationIOS.OrientationIos.changeScreenOrientation(OrientationIOS.DeviceOrientation.Portrait);
+          print("change to Portrait");
         },child: Container(height: 44,child: Text('Portrait'),),),
         GestureDetector(onTap: (){
           OrientationIOS.OrientationIos.changeScreenOrientation(OrientationIOS.DeviceOrientation.PortraitUpsideDown);
-        },child: Container(height: 44,child: Text('PortraitUpsideDown'),),),
+          print("change to PortraitUpsideDown");
+        },child: Container(color: Colors.lightBlueAccent,height: 44,child: Text('PortraitUpsideDown'),),),
         GestureDetector(onTap: (){
           OrientationIOS.OrientationIos.changeScreenOrientation(OrientationIOS.DeviceOrientation.LandscapeLeft);
+          print("change to LandscapeLeft");
         },child: Container(height: 44,child: Text('LandscapeLeft'),),),
         GestureDetector(onTap: (){
           OrientationIOS.OrientationIos.changeScreenOrientation(OrientationIOS.DeviceOrientation.LandscapeRight);
-        },child: Container(height: 44,child: Text('LandscapeRight'),),),
+          print("change to LandscapeRight");
+        },child: Container(color: Colors.lightBlueAccent,height: 44,child: Text('LandscapeRight'),),),
       ],),
     ));
   }
