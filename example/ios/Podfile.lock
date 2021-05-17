@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - orientation_ios (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - orientation_ios (from `.symlinks/plugins/orientation_ios/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  orientation_ios:
+    :path: ".symlinks/plugins/orientation_ios/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  orientation_ios: 13a2cbe5dcb4e806a361528424458d879263b32b
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.10.0
