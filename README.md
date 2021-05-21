@@ -11,16 +11,16 @@ dependencies:
   orientation_ios:
     git:
       url: https://github.com/yangyangFeng/orientation_ios.git
-      tag: 1.0.2
+      tag: 1.1.0
 ```
 
 ```
 //import pulgin
-import 'package:orientation_ios/orientation_ios.dart' as P;
-//change orientation to Portrait
-P.OrientationIos.changeScreenOrientation(P.DeviceOrientation.Portrait);
-//change orientation to LandscapeLeft
-P.OrientationIos.changeScreenOrientation(P.DeviceOrientation.LandscapeLeft);
+import 'package:orientation_ios/orientation_ios.dart';
+//change orientation to portraitUp
+OrientationIos.changeScreenOrientation(DeviceOrientation.portraitUp);
+//change orientation to landscapeRight
+OrientationIos.changeScreenOrientation(DeviceOrientation.landscapeRight);
 ```
 
 # 1.0.2
