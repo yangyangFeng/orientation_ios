@@ -84,12 +84,10 @@ packages:
   orientation_ios:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "3fee0c1eb9da32078b93fd964da0af7447699b67"
-      url: "https://github.com/yangyangFeng/orientation_ios.git"
-    source: git
-    version: "0.0.2"
+      path: ".."
+      relative: true
+    source: path
+    version: "1.0.2"
   path:
     dependency: transitive
     description:

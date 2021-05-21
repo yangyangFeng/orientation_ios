@@ -1,8 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:orientation_ios/orientation_ios.dart' as OrientationIOS;
+import 'package:orientation_ios/orientation_ios.dart';
 
 //export 'package:orientation_ios/orientation_ios.dart';
 void main() {
@@ -15,21 +17,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-
   }
 
   @override
   Widget build(BuildContext context) {
+    var  aa = DeviceOrientation;
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -41,22 +37,26 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget buildCenter() {
+    DeviceOrientation aa = DeviceOrientation.portraitUp;
+    print('${aa.index}');
+    if (Platform.isIOS) {
+    }
     return SafeArea(child: Center(
       child: ListView(children: [
         GestureDetector(onTap: (){
-          OrientationIOS.OrientationIos.changeScreenOrientation(OrientationIOS.DeviceOrientation.Portrait);
+          OrientationIos.changeScreenOrientation(DeviceOrientation.portraitUp);
           print("change to Portrait");
         },child: Container(height: 44,child: Text('Portrait'),),),
         GestureDetector(onTap: (){
-          OrientationIOS.OrientationIos.changeScreenOrientation(OrientationIOS.DeviceOrientation.PortraitUpsideDown);
+          OrientationIos.changeScreenOrientation(DeviceOrientation.portraitDown);
           print("change to PortraitUpsideDown");
         },child: Container(color: Colors.lightBlueAccent,height: 44,child: Text('PortraitUpsideDown'),),),
         GestureDetector(onTap: (){
-          OrientationIOS.OrientationIos.changeScreenOrientation(OrientationIOS.DeviceOrientation.LandscapeLeft);
+          OrientationIos.changeScreenOrientation(DeviceOrientation.landscapeLeft);
           print("change to LandscapeLeft");
         },child: Container(height: 44,child: Text('LandscapeLeft'),),),
         GestureDetector(onTap: (){
-          OrientationIOS.OrientationIos.changeScreenOrientation(OrientationIOS.DeviceOrientation.LandscapeRight);
+          OrientationIos.changeScreenOrientation(DeviceOrientation.landscapeRight);
           print("change to LandscapeRight");
         },child: Container(color: Colors.lightBlueAccent,height: 44,child: Text('LandscapeRight'),),),
       ],),

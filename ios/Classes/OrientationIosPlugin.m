@@ -6,7 +6,6 @@
 
 static NSString *const CHANNEL_NAME = @"orientation_ios";
 static NSString *const METHOD_CHANGE_ORIENTATION = @"change_orientation";
-static NSString *const METHOD_APP_SUPPORT_ORIENTATION = @"app_support_orientation";
 
 @implementation OrientationIosPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -25,14 +24,14 @@ static NSString *const METHOD_APP_SUPPORT_ORIENTATION = @"app_support_orientatio
     switch ([index intValue]) {
       case 0:
       {
-        appSupportOrientation = UIInterfaceOrientationMaskAll;
-        iOSOrientation = UIInterfaceOrientationUnknown;
+        appSupportOrientation = UIInterfaceOrientationMaskPortrait;
+        iOSOrientation = UIInterfaceOrientationPortrait;
       }
         break;
       case 1:
       {
-        appSupportOrientation = UIInterfaceOrientationMaskPortrait;
-        iOSOrientation = UIInterfaceOrientationPortrait;
+        appSupportOrientation = UIInterfaceOrientationMaskLandscape;
+        iOSOrientation = UIInterfaceOrientationLandscapeLeft;
       }
         break;
       case 2:
@@ -44,16 +43,15 @@ static NSString *const METHOD_APP_SUPPORT_ORIENTATION = @"app_support_orientatio
       case 3:
       {
         appSupportOrientation = UIInterfaceOrientationMaskLandscape;
-        iOSOrientation = UIInterfaceOrientationLandscapeLeft;
-      }
-        break;
-      case 4:
-      {
-        appSupportOrientation = UIInterfaceOrientationMaskLandscape;
         iOSOrientation = UIInterfaceOrientationLandscapeRight;
       }
         break;
       default:
+      {
+        appSupportOrientation = UIInterfaceOrientationMaskAll;
+        iOSOrientation = UIInterfaceOrientationUnknown;
+
+      }
         break;
     }
     FlutterAppDelegate *delegate = (FlutterAppDelegate *)[UIApplication sharedApplication].delegate;
@@ -62,54 +60,7 @@ static NSString *const METHOD_APP_SUPPORT_ORIENTATION = @"app_support_orientatio
       [[UIDevice currentDevice] setValue:@(iOSOrientation) forKey:@"orientation"];
       [UIViewController attemptRotationToDeviceOrientation];
       result(nil);
-  } else if([METHOD_APP_SUPPORT_ORIENTATION isEqualToString:call.method]){
-    NSNumber *index = [NSNumber numberWithInt: [call.arguments[0] intValue]];
-    UIInterfaceOrientationMask appSupportOrientation;
-    switch ([index intValue]) {
-      case 0:
-      {
-        appSupportOrientation = UIInterfaceOrientationMaskPortrait;
-      }
-        break;
-      case 1:
-      {
-        appSupportOrientation = UIInterfaceOrientationMaskLandscapeLeft;
-      }
-        break;
-      case 2:
-      {
-        appSupportOrientation = UIInterfaceOrientationMaskLandscapeRight;
-      }
-        break;
-      case 3:
-      {
-        appSupportOrientation = UIInterfaceOrientationMaskPortraitUpsideDown;
-      }
-        break;
-      case 4:
-      {
-        appSupportOrientation = UIInterfaceOrientationMaskLandscape;
-      }
-        break;
-      case 5:
-      {
-        appSupportOrientation = UIInterfaceOrientationMaskAll;
-      }
-        break;
-      case 6:
-      {
-        appSupportOrientation = UIInterfaceOrientationMaskAllButUpsideDown;
-      }
-        break;
-      default:
-        appSupportOrientation = UIInterfaceOrientationMaskAll;
-        break;
-    }
-    FlutterAppDelegate *delegate = (FlutterAppDelegate *)[UIApplication sharedApplication].delegate;
-    delegate.orientationMask = appSupportOrientation;
-    [[UIApplication sharedApplication] supportedInterfaceOrientationsForWindow:[UIApplication sharedApplication].keyWindow];
-    result(nil);
-  }else {
+  } else {
     result(FlutterMethodNotImplemented);
   }
 }
