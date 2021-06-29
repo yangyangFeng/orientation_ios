@@ -23,7 +23,7 @@ OrientationIos.changeScreenOrientation(DeviceOrientation.portraitUp);
 OrientationIos.changeScreenOrientation(DeviceOrientation.landscapeRight);
 ```
 
-# 1.0.2
+# 1.1.0
 
 update example code
 
